@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getCatsFetch } from "../../reducers/catReducer";
+import { getDogsFetch } from "../../reducers/dogReducer";
 
 export default function Welcome() {
+
+    const dispatch = useDispatch()
+    useEffect(()=>{
+
+            dispatch(getCatsFetch())
+            dispatch(getDogsFetch())
+
+    },[dispatch])
+    
   return (
     <div class="jumbotron">
       <h1 class="display-4">Welcome to Animals.com </h1>

@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getDogsFetch } from '../../reducers/dogReducer'
+import { useSelector } from 'react-redux'
 import ViewDogImages from '../../Views/ViewDogImages'
 
 export default function Dogs() {
 
     const dogs = useSelector((state)=> state.dogs.dogs)
-    const dispatch = useDispatch()
     useEffect(()=>{
 
-            dispatch(getDogsFetch())
+            
 
-    },[dispatch])
+    },[])
 
     console.log(dogs)
   return (
